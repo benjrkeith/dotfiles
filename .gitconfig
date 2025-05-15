@@ -1,0 +1,7 @@
+[user]
+	name = benjrkeith
+	email = 37029865+benjrkeith@users.noreply.github.com
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
