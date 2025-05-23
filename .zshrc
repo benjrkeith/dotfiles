@@ -25,6 +25,7 @@ alias ls='ls -la --color=auto'
 alias grep='grep --color=auto'
 alias clip='xclip -selection clipboard'
 
+export EDITOR='vim'
 export PROMPT="%{$(tput setaf 51)%}%n%{$(tput setaf 39)%}@%{$(tput setaf 39)%}%m %{$(tput sgr0)%}$ "
 
 neofetch
