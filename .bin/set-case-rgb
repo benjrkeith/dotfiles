@@ -1,0 +1,3 @@
+#!/bin/bash
+source ~/test/bin/activate
+hue spectrum 0
