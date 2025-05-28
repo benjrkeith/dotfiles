@@ -1,0 +1,14 @@
+#!/bin/bash
+current=$(goxlr-client --status | grep 'Mixer profile:' | awk '{print $NF}')
+if [[ "$current" == "$1" ]]; then 
+	exit 0
+fi
+
+echo $current
+if [[ "$current" == 'Speakers' ]]; then
+	target='Headphones'
+else
+	target='Speakers'
+fi
+
+goxlr-client profiles device load "$target"
