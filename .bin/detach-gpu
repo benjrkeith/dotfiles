@@ -34,8 +34,8 @@ sudo modprobe vfio-pci
 echo "$GPU_ID" | sudo tee /sys/bus/pci/drivers/vfio-pci/new_id
 echo "$AUDIO_ID" | sudo tee /sys/bus/pci/drivers/vfio-pci/new_id
 
-echo "[6/7] Load iGPU kernel modules"
-sudo modprobe i915
+#echo "[6/7] Load iGPU kernel modules"
+#sudo modprobe i915
 
 echo "[6/7] Restarting GDM (should now run on iGPU)..."
 sudo systemctl start gdm
