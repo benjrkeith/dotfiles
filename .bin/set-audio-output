@@ -1,14 +1,31 @@
 #!/bin/bash
-current=$(goxlr-client --status | grep 'Mixer profile:' | awk '{print $NF}')
-if [[ "$current" == "$1" ]]; then 
-	exit 0
+
+# Path to state file (you can change this)
+STATE_FILE="$HOME/.audio-output-state"
+
+# Initialize state file if it doesn't exist
+if [[ ! -f "$STATE_FILE" ]]; then
+    echo "A" > "$STATE_FILE"
 fi
 
-echo $current
-if [[ "$current" == 'Speakers' ]]; then
-	target='Headphones'
+# Read current state
+CURRENT_STATE=$(cat "$STATE_FILE")
+
+if [[ "$CURRENT_STATE" == "A" ]]; then
+    echo "Running Task A..."
+    # --- Your Task A commands go here ---
+    goxlr-client volume line-out 100
+    goxlr-client volume headphones 0
+
+    # Update state to B
+    echo "B" > "$STATE_FILE"
 else
-	target='Speakers'
+    echo "Running Task B..."
+    # --- Your Task B commands go here ---
+    goxlr-client volume headphones 100
+    goxlr-client volume line-out 0
+
+    # Update state to A
+    echo "A" > "$STATE_FILE"
 fi
 
-goxlr-client profiles device load "$target"
