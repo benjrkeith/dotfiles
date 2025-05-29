@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# PCI IDs for the GPU and its HDMI audio function
+GPU="0000:01:00.0"
+AUDIO="0000:01:00.1"
+
+# Vendor:Device IDs (change if yours are different)
+GPU_ID="10de 2484"
+AUDIO_ID="10de 228b"
+
+echo "[1/7] Stopping display manager (GDM)..."
+sudo systemctl stop gdm
+
+echo "[2/7] Stopping NVIDIA persistenced (if running)..."
+sudo systemctl stop nvidia-persistenced 2>/dev/null || true
+
+echo "[3/7] Unloading NVIDIA kernel modules..."
+sudo modprobe -r nvidia_drm nvidia_modeset nvidia_uvm nvidia || {
+  echo "⚠️ Failed to unload NVIDIA modules. A process may still be using them."
+  exit 1
+}
+
+echo "[4/7] Unbinding dGPU from NVIDIA driver..."
+for dev in "$GPU" "$AUDIO"; do
+  if [ -L "/sys/bus/pci/devices/$dev/driver" ]; then
+    echo "$dev" | sudo tee "/sys/bus/pci/devices/$dev/driver/unbind"
+  fi
+done
+
+echo "[5/7] Binding dGPU to vfio-pci..."
+sudo modprobe vfio-pci
+
+echo "$GPU_ID" | sudo tee /sys/bus/pci/drivers/vfio-pci/new_id
+echo "$AUDIO_ID" | sudo tee /sys/bus/pci/drivers/vfio-pci/new_id
+
+echo "[6/7] Load iGPU kernel modules"
+sudo modprobe i915
+
+echo "[6/7] Restarting GDM (should now run on iGPU)..."
+sudo systemctl start gdm
+
+echo "✅ dGPU detached and passed to vfio. GDM running on iGPU."
