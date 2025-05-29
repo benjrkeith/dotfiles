@@ -27,6 +27,7 @@ alias clip='xclip -selection clipboard'
 alias v='nvim'
 
 export EDITOR='nvim'
+export LIBVIRT_DEFAULT_URI=qemu:///system
 export PROMPT="%{$(tput setaf 51)%}%n%{$(tput setaf 39)%}@%{$(tput setaf 39)%}%m %{$(tput sgr0)%}$ "
 
 neofetch
