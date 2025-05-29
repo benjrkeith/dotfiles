@@ -21,7 +21,7 @@ export NVM_DIR="$HOME/.nvm"
 # END of NVM
 
 # Custom
-alias ls='ls -la --color=auto'
+alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias clip='xclip -selection clipboard'
 alias v='nvim'
@@ -30,7 +30,7 @@ export EDITOR='nvim'
 export LIBVIRT_DEFAULT_URI=qemu:///system
 export PROMPT="%{$(tput setaf 51)%}%n%{$(tput setaf 39)%}@%{$(tput setaf 39)%}%m %{$(tput sgr0)%}$ "
 
-neofetch
+fastfetch
 # End of Custom
 
 
