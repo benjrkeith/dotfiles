@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+iGPU="0000:00:02.0"
+GPU="0000:01:00.0"
+AUDIO="0000:01:00.1"
+GPU_ID="10de 2484"
+AUDIO_ID="10de 228b"
+
+echo "[1/5] Unbinding dGPU"
+echo "$GPU" | sudo tee "/sys/bus/pci/devices/$GPU/driver/unbind"
+echo "$AUDIO" | sudo tee "/sys/bus/pci/devices/$AUDIO/driver/unbind"
+
+echo "[2/5] Removing vfio-pci device IDs..."
+echo "$GPU_ID" | sudo tee /sys/bus/pci/drivers/vfio-pci/remove_id
+echo "$AUDIO_ID" | sudo tee /sys/bus/pci/drivers/vfio-pci/remove_id
+
+echo "[3/5] Loading NVIDIA kernel modules..."
+sudo modprobe nvidia
+sudo modprobe nvidia_modeset
+sudo modprobe nvidia_uvm
+sudo modprobe nvidia_drm modeset=1
+
+#echo "[3/4] Binding devices back to NVIDIA driver..."
+#echo "$GPU" | sudo tee /sys/bus/pci/drivers/nvidia/bind
+#echo "$AUDIO" | sudo tee /sys/bus/pci/drivers/nvidia/bind
+
+echo "[4/5] Unbinding iGPU"
+sudo systemctl stop gdm
+echo "$iGPU" | sudo tee "/sys/bus/pci/devices/$iGPU/driver/unbind"
+sudo modprobe -r i915
+
+echo "[5/5] Starting GDM..."
+sudo systemctl start gdm
+
+echo "✅ dGPU reattached and host resumed on it."
