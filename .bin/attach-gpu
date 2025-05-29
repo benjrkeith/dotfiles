@@ -25,12 +25,12 @@ sudo modprobe nvidia_drm modeset=1
 #echo "$GPU" | sudo tee /sys/bus/pci/drivers/nvidia/bind
 #echo "$AUDIO" | sudo tee /sys/bus/pci/drivers/nvidia/bind
 
-echo "[4/5] Unbinding iGPU"
-sudo systemctl stop gdm
-echo "$iGPU" | sudo tee "/sys/bus/pci/devices/$iGPU/driver/unbind"
-sudo modprobe -r i915
+#echo "[4/5] Unbinding iGPU"
+#sudo systemctl stop gdm
+#echo "$iGPU" | sudo tee "/sys/bus/pci/devices/$iGPU/driver/unbind"
+#sudo modprobe -r i915
 
 echo "[5/5] Starting GDM..."
-sudo systemctl start gdm
+sudo systemctl restart gdm
 
 echo "✅ dGPU reattached and host resumed on it."
