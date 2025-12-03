@@ -1,0 +1,18 @@
+{
+  "explorer.confirmDelete": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.sideBar.location": "right",
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  },
+  "editor.tabSize": 2,
+  "editor.wordWrap": "bounded",
+  "editor.rulers": [80],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "git.confirmSync": false
+}
