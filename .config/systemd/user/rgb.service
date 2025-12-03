@@ -1,0 +1,10 @@
+[Unit]
+Description=RGB
+After=default.target
+
+[Service]
+ExecStart=/home/ben/.bin/set-case-rgb
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

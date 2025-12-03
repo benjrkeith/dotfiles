@@ -1,0 +1,11 @@
+[Unit]
+Description=Hyprpanel
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/hyprpanel
+Restart=on-failure
+Slice=app-graphical.slice
+
+[Install]
+WantedBy=graphical-session.target
