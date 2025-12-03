@@ -1,0 +1,111 @@
+/* Global Styles */
+* {
+  font-family: "SF Pro Text", "Inter", "Segoe UI, NotoSans Nerd Font",
+    sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 0;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
+/* Waybar Container */
+#waybar {
+  background: transparent;
+}
+
+/* Left Modules */
+#workspaces {
+  background-color: #1a1b26;
+  border-radius: 6px; /* These modules are always rounded */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 0;
+  border: none;
+
+  /* Transition for background-color and color only */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  margin: 0px 10px;
+}
+
+#workspaces button {
+  color: #c6d0f5;
+  border-radius: 6px; /* Workspaces buttons are always rounded */
+  padding: 0.3rem 0.7rem;
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: none;
+}
+
+#workspaces button.active {
+  color: #99d1db;
+  background-color: rgba(153, 209, 219, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(153, 209, 219, 0.2);
+}
+
+#workspaces button:hover {
+  background: rgb(41, 42, 53); /* Reference bright hover color */
+  color: #c6d0f5;
+}
+
+/* Center Module */
+#clock {
+  background-color: #1a1b26;
+  color: #c6d0f5;
+  padding: 0.3rem 1rem;
+  margin: 0px 0px;
+  border-radius: 6px; /* This module is always rounded */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Right Modules */
+#bluetooth,
+#pulseaudio,
+#network {
+  background-color: #1a1b26;
+  padding: 0.3rem 0.9rem;
+  margin: 0px 0px;
+  border-radius: 0;
+  box-shadow: none;
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  font-size: 18px;
+  color: #c6d0f5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#bluetooth:hover,
+#pulseaudio:hover,
+#network:hover {
+  background-color: rgb(41, 42, 53);
+}
+
+#bluetooth {
+  margin-left: 0px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  color: #888888;
+}
+
+#bluetooth.on {
+  color: #c6d0f5;
+}
+
+#bluetooth.connected {
+  color: #99d1db;
+}
+
+#network.disconnected {
+  color: #e78284;
+}
+
+#pulseaudio {
+  margin: 0px 10px 0px 0px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
