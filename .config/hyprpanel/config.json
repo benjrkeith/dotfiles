@@ -1,7 +1,7 @@
 {
   "theme.font.name": "MesloLGM Nerd Font Mono",
   "theme.font.label": "MesloLGM Nerd Font Mono Bold",
-  "theme.font.size": "1.1rem",
+  "theme.font.size": "1.2rem",
   "menus.transition": "crossfade",
   "theme.bar.menus.enableShadow": false,
   "theme.bar.menus.monochrome": false,
@@ -19,7 +19,7 @@
   "theme.bar.buttons.padding_y": "0rem",
   "theme.bar.buttons.radius": "2em",
   "theme.bar.buttons.innerRadiusMultiplier": "0.4",
-  "theme.bar.layer": "top",
+  "theme.bar.layer": "background",
   "theme.bar.dropdownGap": "3.1em",
   "theme.bar.margin_top": "0.4em",
   "theme.bar.margin_sides": "0.4em",
@@ -62,6 +62,7 @@
         "clock"
       ],
       "right": [
+        "systray",
         "volume",
         "network",
         "bluetooth",
@@ -102,7 +103,7 @@
   "theme.bar.buttons.monochrome": false,
   "theme.bar.background": "#2e3440",
   "theme.bar.buttons.background": "#3b4252",
-  "bar.volume.rightClick": "firefox http://localhost:14564/",
+  "bar.volume.rightClick": "firefox --new-window http://localhost:14564/",
   "bar.customModules.storage.paths": [
     "/"
   ],
@@ -569,5 +570,7 @@
   "theme.bar.menus.card_radius": "0.4em",
   "theme.bar.menus.border.radius": "0.7em",
   "theme.bar.menus.buttons.radius": "0.4em",
-  "bar.workspaces.workspaces": 9
+  "bar.workspaces.workspaces": 9,
+  "menus.power.logout": "uwsm stop",
+  "menus.power.reboot": "systemctl reboot"
 }

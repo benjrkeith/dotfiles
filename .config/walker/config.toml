@@ -1,0 +1,9 @@
+force_keyboard_focus = true
+selection_wrap = true
+hide_action_hints = true
+hide_quick_activation = true
+theme = "custom"
+
+[providers]
+default = ["desktopapplications", "calc"]
+ignore_preview = ["files", "clipboard"]

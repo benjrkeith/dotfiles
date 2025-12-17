@@ -1,111 +1,70 @@
-/* Global Styles */
+@define-color foreground #ffffff;
+@define-color background #1a1a26;
+
 * {
-  font-family: "SF Pro Text", "Inter", "Segoe UI, NotoSans Nerd Font",
-    sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  min-height: 0;
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-bottom: 0px;
-}
+  background-color: @background;
+  color: @foreground;
 
-/* Waybar Container */
-#waybar {
-  background: transparent;
-}
-
-/* Left Modules */
-#workspaces {
-  background-color: #1a1b26;
-  border-radius: 6px; /* These modules are always rounded */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  min-width: 0;
   border: none;
+  border-radius: 0;
 
-  /* Transition for background-color and color only */
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  margin: 0px 10px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 16px;
+  font-weight: 600;
+
+  min-height: 24px;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+#clock {
+  font-size: 15px;
+  padding: 4px 0;
 }
 
 #workspaces button {
-  color: #c6d0f5;
-  border-radius: 6px; /* Workspaces buttons are always rounded */
-  padding: 0.3rem 0.7rem;
-  background: transparent;
-  transition: all 0.2s ease-in-out;
-  border: none;
-  outline: none;
+  all: initial;
+  padding: 0px 8px;
 }
 
-#workspaces button.active {
-  color: #99d1db;
-  background-color: rgba(153, 209, 219, 0.1);
-  box-shadow: inset 0 0 0 1px rgba(153, 209, 219, 0.2);
+#workspaces button.empty {
+  opacity: 0.5;
 }
 
-#workspaces button:hover {
-  background: rgb(41, 42, 53); /* Reference bright hover color */
-  color: #c6d0f5;
-}
-
-/* Center Module */
-#clock {
-  background-color: #1a1b26;
-  color: #c6d0f5;
-  padding: 0.3rem 1rem;
-  margin: 0px 0px;
-  border-radius: 6px; /* This module is always rounded */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  min-width: 0;
-  border: none;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
-/* Right Modules */
-#bluetooth,
-#pulseaudio,
-#network {
-  background-color: #1a1b26;
-  padding: 0.3rem 0.9rem;
-  margin: 0px 0px;
-  border-radius: 0;
-  box-shadow: none;
-  min-width: 0;
-  border: none;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  font-size: 18px;
-  color: #c6d0f5;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-#bluetooth:hover,
-#pulseaudio:hover,
-#network:hover {
-  background-color: rgb(41, 42, 53);
+#tray {
+  padding: 4px 8px;
 }
 
 #bluetooth {
-  margin-left: 0px;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  color: #888888;
+  font-size: 16px;
+  padding: 0 12px;
 }
 
-#bluetooth.on {
-  color: #c6d0f5;
-}
-
-#bluetooth.connected {
-  color: #99d1db;
-}
-
-#network.disconnected {
-  color: #e78284;
+#network {
+  font-size: 16px;
+  padding: 0px 14px 0px 10px;
 }
 
 #pulseaudio {
-  margin: 0px 10px 0px 0px;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+  font-size: 13px;
+  padding: 0px 8px;
+}
+
+#custom-expand-icon {
+  padding: 0px 8px;
+  font-size: 14px;
+}
+
+tooltip {
+  padding: 2px;
+}
+
+.hidden {
+  opacity: 0;
 }

@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "My Theme",
+  "version": "1.0",
+  "theme": {
+    "colors": {
+      "frame": [38, 41, 52],
+      "frame_inactive": [38, 41, 52],
+      "toolbar": [26, 26, 38],
+      "tab_text": [255, 255, 255],
+      "tab_background_text": [200, 200, 200],
+      "ntp_background": [26, 26, 38],
+      "ntp_text": [255, 255, 255],
+      "ntp_link": [120, 160, 255]
+    }
+  }
+}

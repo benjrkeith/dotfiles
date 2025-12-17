@@ -3,55 +3,92 @@
   "position": "top",
   "margin-bottom": 0,
   "spacing": 0,
+  "height": 24,
 
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["bluetooth", "network", "pulseaudio"],
+  "modules-right": [
+    "group/tray-expander",
+    "bluetooth",
+    "network",
+    "pulseaudio"
+  ],
 
   "hyprland/workspaces": {
-    "format": "{name}",
+    "on-click": "activate",
+    "format": "{icon}",
     "format-icons": {
-      "active": "",
-      "default": ""
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "active": "󱓻"
     }
   },
 
   "clock": {
     "timezone": "Europe/London",
     "tooltip": false,
-    "format": "{:%H:%M:%S  -  %a %d %b}",
+    "format": "{:%a %d %b  %H:%M:%S}",
     "interval": 1
   },
 
-  "bluetooth": {
-    "format": "󰂲",
-    "format-on": "{icon}",
-    "format-off": "{icon}",
-    "format-connected": "{icon}",
-    "format-icons": {
-      "on": "󰂯",
-      "off": "󰂲",
-      "connected": "󰂱"
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
     },
-    "on-click": "blueman-manager",
-    "tooltip-format-connected": "{device_enumerate}"
+    "modules": ["custom/expand-icon", "tray"]
+  },
+
+  "custom/expand-icon": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 12,
+    "spacing": 17
+  },
+
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    "format-no-controller": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "alacritty -e bluetui"
   },
 
   "network": {
-    "format-wifi": "󰤢",
-    "format-ethernet": "󰈀",
-    "format-disconnected": "󰤠",
-    "interval": 5,
-    "on-click": "nm-connection-editor"
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "nmtui"
   },
 
   "pulseaudio": {
-    "format": "{icon}",
+    "format": "{icon} ",
     "format-muted": "",
     "format-icons": {
-      "default": ["", "", " "]
+      "default": ["", "", ""]
     },
-    "on-click": "firefox http://localhost:14564/",
-    "on-click-right": "set-audio-output"
+    "on-click": "chromium http://localhost:14564/",
+    "on-click-right": "set-audio-output",
+    "justify": "center"
   }
 }
