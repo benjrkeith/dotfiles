@@ -7,9 +7,10 @@
   "editor.rulers": [80],
   "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "editor.fontSize": 14,
 
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font, monospace",
-  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontSize": 14,
 
   "workbench.colorTheme": "Dracula Theme",
   "workbench.sideBar.location": "right",
