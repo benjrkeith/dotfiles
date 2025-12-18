@@ -1,0 +1,10 @@
+[Unit]
+Description=Hue Plus RGB
+After=default.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.hue_plus/bin/hue spectrum 0
+
+[Install]
+WantedBy=default.target

@@ -78,7 +78,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "nmtui"
+    "on-click": "nm-connection-editor"
   },
 
   "pulseaudio": {
