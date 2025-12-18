@@ -44,10 +44,23 @@
       "format": "{size-used} / {size-total}"
     },
     "break",
-    { "type": "kernel", "key": "   " },
-    { "type": "wm", "key": "   ", "format": "{pretty-name} {version}" },
-    { "type": "terminal", "key": "   " },
-    { "type": "packages", "key": "  󰏖 " },
+    {
+      "type": "kernel",
+      "key": "   "
+    },
+    {
+      "type": "wm",
+      "key": "   ",
+      "format": "{pretty-name} {version}"
+    },
+    {
+      "type": "terminal",
+      "key": "   "
+    },
+    {
+      "type": "packages",
+      "key": "  󰏖 "
+    },
     {
       "type": "custom",
       "outputColor": "blue",

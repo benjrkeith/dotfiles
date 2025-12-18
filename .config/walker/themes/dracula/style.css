@@ -1,9 +1,8 @@
-@define-color window_bg_color #1a1a26;
-@define-color accent_bg_color #b4c4f4;
-@define-color border_color #33ccff;
-@define-color theme_fg_color #ffffff;
-@define-color error_bg_color #C34043;
-@define-color error_fg_color #DCD7BA;
+@define-color window_bg_color #282A36;
+@define-color accent_bg_color #44475A;
+@define-color theme_fg_color #F8F8F2;
+@define-color error_bg_color #FF5555;
+@define-color error_fg_color #F8F8F2;
 
 * {
   all: unset;
@@ -33,7 +32,7 @@ scrollbar {
   background: @window_bg_color;
   padding: 20px;
   border: 2px solid;
-  border-image: linear-gradient(to bottom right, #33ccff, #00ff99) 1;
+  border-image: linear-gradient(to bottom right, #d0b3fa, #bd93f9) 1;
 }
 
 .preview-box,

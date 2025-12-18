@@ -1,5 +1,5 @@
-@define-color foreground #ffffff;
-@define-color background #1a1a26;
+@define-color background #282a36;
+@define-color foreground #f8f8f2;
 
 * {
   background-color: @background;
@@ -9,8 +9,8 @@
   border-radius: 0;
 
   font-family: "JetBrainsMono Nerd Font";
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 900;
 
   min-height: 24px;
 }
@@ -24,7 +24,7 @@
 }
 
 #clock {
-  font-size: 15px;
+  font-size: 16px;
   padding: 4px 0;
 }
 
@@ -42,23 +42,23 @@
 }
 
 #bluetooth {
-  font-size: 16px;
+  font-size: 18px;
   padding: 0 12px;
 }
 
 #network {
-  font-size: 16px;
+  font-size: 18px;
   padding: 0px 14px 0px 10px;
 }
 
 #pulseaudio {
-  font-size: 13px;
+  font-size: 16px;
   padding: 0px 8px;
 }
 
 #custom-expand-icon {
   padding: 0px 8px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 tooltip {
