@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euo pipefail
+
+sudo systemctl enable bluetooth
+
+systemctl --user enable pipewire 
+systemctl --user enable pipewire-pulse 
+systemctl --user enable wireplumber
+systemctl --user enable waybar
+systemctl --user enable elephant
+systemctl --user enable walker
+systemctl --user enable hue_plus
+systemctl --user enable goxlr
