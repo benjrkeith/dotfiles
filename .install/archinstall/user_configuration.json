@@ -264,7 +264,7 @@
     "type": "manual"
   },
   "ntp": true,
-  "packages": ["stow", "vim", "git", "zsh"],
+  "packages": ["stow", "vim", "git", "zsh", "plymouth"],
   "parallel_downloads": 0,
   "profile_config": {
     "gfx_driver": null,
