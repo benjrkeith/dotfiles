@@ -1,4 +1,6 @@
 #!/bin/bash
+# Enables all required services
+
 set -euo pipefail
 
 sudo systemctl enable bluetooth

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Build and install yay from source
+
 set -euo pipefail
 
 # Exit early if yay already installed
