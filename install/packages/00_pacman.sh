@@ -10,6 +10,6 @@ fi
 
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
-mapfile -t packages < <(grep -v '^#' "$script_dir/80_pacman.packages" | 
+mapfile -t packages < <(grep -v '^#' "$script_dir/pacman.packages" | 
 grep -v '^$')
 pacman -S --noconfirm --needed "${packages[@]}"
