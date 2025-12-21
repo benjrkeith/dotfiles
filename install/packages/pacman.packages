@@ -20,6 +20,7 @@ libappindicator-gtk3
 man-db
 networkmanager
 neovim
+nfs-utils
 nvidia-open
 nvm
 nwg-look
@@ -35,6 +36,7 @@ qt6ct
 starship
 thunar
 ttf-jetbrains-mono-nerd
+udiskie
 unzip
 uwsm
 vlc
@@ -45,3 +47,4 @@ wl-clipboard
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-utils
+zsh

@@ -11,3 +11,4 @@ exec uwsm start hyprland.desktop
 EOF
 
 sudo chmod +x /usr/local/bin/start-hyprland-uwsm-silent
+echo "Created silent hyprland script"

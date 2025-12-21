@@ -1,0 +1,10 @@
+[Unit]
+Description=Udiskie
+After=default.target
+
+[Service]
+ExecStart=/usr/bin/udiskie
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

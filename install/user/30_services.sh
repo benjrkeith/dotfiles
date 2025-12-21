@@ -14,3 +14,4 @@ systemctl --user enable elephant
 systemctl --user enable walker
 systemctl --user enable hue_plus
 systemctl --user enable goxlr
+systemctl --user enable udiskie

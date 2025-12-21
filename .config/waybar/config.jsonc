@@ -78,7 +78,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "nm-connection-editor"
+    "on-click": "alacritty -e nmtui"
   },
 
   "pulseaudio": {
@@ -88,7 +88,7 @@
       "default": ["", "", ""]
     },
     "on-click": "chromium http://localhost:14564/",
-    "on-click-right": "set-audio-output",
+    "on-click-right": "/home/bk/.bin/set-audio-output",
     "justify": "center"
   }
 }
