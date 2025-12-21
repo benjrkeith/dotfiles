@@ -52,6 +52,9 @@ apply_theme_symlinks() {
 main() {
   download_and_install_theme
   apply_theme_symlinks
+
+  gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
+  gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
 }
 
 main "$@"

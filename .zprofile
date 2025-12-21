@@ -1,3 +1,3 @@
 if [ "$(tty)" = "/dev/tty1" ] && uwsm check may-start; then
-  exec uwsm start hyprland.desktop
+  exec "/usr/local/bin/start-hyprland-uwsm-silent"
 fi
