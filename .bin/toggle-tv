@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+MAIN="DP-2"
+TV="HDMI-A-1"
+TV_MODE="1920x1080@60"
+TV_POS="-1920x0"
+TV_SCALE="1"
+WS="5"
+
+is_tv_listed() {
+  hyprctl monitors | grep -q "^Monitor ${TV} "
+}
+
+if is_tv_listed; then
+  # TV currently enabled -> move WS back to main, then disable TV
+  hyprctl dispatch moveworkspacetomonitor "${WS} ${MAIN}" >/dev/null 2>&1 || true
+  hyprctl keyword monitor "${TV},disable"
+  echo "Disabled ${TV} (moved workspace ${WS} to ${MAIN})"
+else
+  # TV not listed -> either disabled OR unplugged. Try enabling.
+  hyprctl keyword monitor "${TV},${TV_MODE},${TV_POS},${TV_SCALE}"
+
+  # Give Hyprland a moment to (re)register the output
+  sleep 0.2
+
+  if is_tv_listed; then
+    hyprctl dispatch moveworkspacetomonitor "${WS} ${TV}"
+    echo "Enabled ${TV} (moved workspace ${WS} to ${TV})"
+  else
+    echo "Tried to enable ${TV}, but it still isn't visible. Is the TV connected, and is the output name correct?"
+    exit 1
+  fi
+fi
+
+hyprctl dispatch workspace $WS

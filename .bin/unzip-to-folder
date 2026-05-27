@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+for f in "$@"; do
+  out="${f%.*}"
+  mkdir -p "$out"
+  unzip -o "$f" -d "$out"
+done

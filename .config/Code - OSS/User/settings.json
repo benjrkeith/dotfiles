@@ -5,7 +5,6 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "bounded",
   "editor.rulers": [80],
-  "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.fontFamily": "JetBrainsMono Nerd Font Mono",
   "editor.fontSize": 14,
 
@@ -22,5 +21,6 @@
   "explorer.confirmPasteNative": false,
 
   "git.confirmSync": false,
-  "chat.disableAIFeatures": true
+  "chat.disableAIFeatures": true,
+  "git.autofetch": true
 }

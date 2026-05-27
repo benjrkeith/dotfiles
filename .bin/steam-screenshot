@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+monitor="DP-2"
+user_id="367450865"
+steam="$HOME/.local/share/Steam"
+
+get_appid_from_content_log() {
+  grep "App Running" ~/.local/share/Steam/logs/content_log.txt \
+    | tail -n1 \
+    | sed -nE 's/.*AppID ([0-9]+).*/\1/p'
+}
+
+app_id="$(get_appid_from_content_log)"
+echo $app_id
+screenshots="$steam/userdata/$user_id/760/remote/$app_id/screenshots"
+thumbnails="$screenshots/thumbnails"
+mkdir -p "$screenshots" "$thumbnails"
+
+name="$(date +%Y-%m-%d_%H%M%S).jpg"
+full="$screenshots/$name"
+
+grim -o "$monitor" -t jpeg "$full"
+magick "$full" -resize 200x150 "$thumbnails/$name"

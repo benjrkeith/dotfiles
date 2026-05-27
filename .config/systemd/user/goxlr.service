@@ -5,6 +5,9 @@ After=default.target
 [Service]
 ExecStart=/usr/bin/goxlr-daemon
 Restart=on-failure
+TimeoutStopSec=3s
+KillSignal=SIGINT
+KillMode=mixed
 
 [Install]
 WantedBy=default.target

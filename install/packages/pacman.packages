@@ -10,9 +10,11 @@ dunst
 fastfetch
 flatpak
 grim
+gvfs
 htop
 hyprcursor
 hyprland
+hyprlock
 hyprpaper
 hyprpicker
 hyprpolkitagent
@@ -47,4 +49,5 @@ wl-clipboard
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-utils
+yt-dlp
 zsh

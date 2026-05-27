@@ -12,6 +12,7 @@ compinit
 alias ls='ls -l --color=auto'
 alias grep='grep --color=auto'
 alias v='nvim'
+alias ytdl='yt-dlp -f "bestvideo[height<=720][fps<=30]+bestaudio/best[height<=720][fps<=30]"'
 
 export PATH="$PATH:$HOME/.bin:/home/ben/.dotnet/tools"
 export EDITOR='nvim'
